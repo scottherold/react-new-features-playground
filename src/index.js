@@ -46,11 +46,7 @@ const NoteApp = () => {
         <div>
             <h1>Notes</h1>
             {notes.map((note) => (
-                <div key={note.title}>
-                    <h3>{note.title}</h3>
-                    <p>{note.body}</p>
-                    <button onClick={() => removeNote(note.title)}>x</button>
-                </div>
+                <Note key={note.title} note={note} removeNote={removeNote} />
             ))}
             <p>Add Note</p>
             <form onSubmit={addNote}>
@@ -62,34 +58,21 @@ const NoteApp = () => {
     );
 };
 
-const App = (props) => {
-    /*
-    / with useState(), you can provide any argument (string, number, or object)
-    / This is unlike class components, and state, which requires an object
-    / This returns an array of two items: the state, and the function to manipulate the state
-    / the most common way of accessing array data is by destructing the array (see below syntax)
-    */
-    const [count, setCount] = useState(props.count);
-    const [text, setText] = useState('');
-
-    // This syntax mimics componentDidMount (by passing an empty array, it does not monitor changes to state, but only runs when the component loads)
+const Note = ({ note, removeNote }) => {
     useEffect(() => {
-        console.log('This should only run once!')
+        console.log('Setting up effect');
+
+        // This acts as componentDidUnmount
+        return () => {
+            console.log('Cleaning up effect');
+        }
     }, []);
-
-    // This syntax follows componentDidMount & componentDidUpdate by montioring a specific part of state
-    useEffect(() => {
-        console.log('useEffect ran');
-        document.title = count;
-    }, [count]);
 
     return (
         <div>
-            <p>The current {text || 'count'} is {count}</p>
-            <button onClick={() => setCount(count - 1)}>-1</button>
-            <button onClick={() => setCount(props.count)}>reset</button> {/* uses props.count since 'count' is a constant */}
-            <button onClick={() => setCount(count + 1)}>+1</button>
-            <input value={text} onChange={(e) => setText(e.target.value)} />
+            <h3>{note.title}</h3>
+            <p>{note.body}</p>
+            <button onClick={() => removeNote(note.title)}>x</button>
         </div>
     );
 };
