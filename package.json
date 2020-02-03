@@ -2,6 +2,7 @@
   "name": "react-new-features",
   "version": "0.1.0",
   "private": true,
+  "repository": "git@github.com:scottherold/react-new-features-playground.git",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
