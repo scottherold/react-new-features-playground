@@ -1,6 +1,6 @@
 // *** MODULES *** //
 // ** npm Modules ** //
-import React, { useEffect, useReducer, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 

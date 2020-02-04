@@ -30,14 +30,14 @@ const AddNoteForm = () => {
 
     // Rendering
     return (
-        <div>
+        <>
             <p>Add Note</p>
             <form onSubmit={addNote}>
                 <input value={title} onChange={(e) => setTitle(e.target.value)} />
                 <textarea value={body} onChange={(e) => setBody(e.target.value)}></textarea>
                 <button>add note</button>
             </form>
-        </div>
+        </>
     )
 };
 

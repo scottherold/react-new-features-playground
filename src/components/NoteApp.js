@@ -2,7 +2,7 @@
 
 // *** MODULES *** //
 // ** npm Modules ** //
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 
 // ** App Modules ** //
 import notesReducer from '../reducers/notes';
