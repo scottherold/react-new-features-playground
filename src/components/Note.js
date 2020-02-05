@@ -2,7 +2,7 @@
 
 // *** MODULES *** //
 // ** npm Modules ** //
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 // ** App Modules ** //
 import NotesContext from '../context/notes-context';
